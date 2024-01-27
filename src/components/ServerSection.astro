@@ -1,0 +1,116 @@
+---
+const posts = [
+  {
+    image: "http://nolstagic.com/assets/images/news/news5.jpg",
+    title: "Apertura Retorno de Onyxia Parche 3.2.2",
+    comments: 0,
+  },
+  {
+    image: "http://nolstagic.com/assets/images/news/news5.jpg",
+    title: "Apertura Retorno de Onyxia Parche 3.2.2",
+    comments: 0,
+  },
+  {
+    image: "http://nolstagic.com/assets/images/news/news5.jpg",
+    title: "Convocatoria a nuevos admins 3.2.2",
+    comments: 0,
+  },
+  {
+    image: "http://nolstagic.com/assets/images/news/news5.jpg",
+    title: "Inicio de testeo del wow",
+    comments: 0,
+  },
+];
+---
+
+<div class="flex justify-center gap-5 flex-wrap my-[200px] mx-[100px]">
+  <div class="banner w-[40%]">
+    <div class="title">
+      <h3 class="text-xl text-white my-[25px]">sab 27 enero</h3>
+      <h2 class="text-3xl text-[#ffcc00]">Servidor On-line!</h2>
+    </div>
+    <div class="text">
+      <p>
+        <strong>Disfruta La Historia De Nuestra Expansion Favorita:</strong>
+      </p>
+
+      <ul class="mr-2lis">
+        <li class="list-disc ml-2">
+          Parche 3.3.5a Progresivo Actualmente (TOC Prueba Del Cruzado)
+        </li>
+        <li class="list-disc ml-2">
+          Rates: x20 Leveo Experiencia, Por Promocion
+        </li>
+        <li class="list-disc ml-2">Rates: x10 Profesiones, Por Promocion</li>
+        <li class="list-disc ml-2">Rates: x4 Reputacion, Por Promocion</li>
+        <li class="list-disc ml-2">
+          Y Muchos Mas Por Promocion Aprovecha Es Por Tiempo Limitado
+        </li>
+      </ul>
+    </div>
+    <div class="flex justify-end">
+      <button class="border border-x-yellow-500 p-5">
+        comienza tu aventura</button
+      >
+    </div>
+  </div>
+  <div class="w-[40%] text-white flex flex-col gap-5">
+    {
+      posts.map(({ image, title, comments }) => (
+        <li class="item flex">
+          <a class="flex" target="_blank" href="http://nolstagic.com/news/5">
+            <img class="w-10" src={image} />
+            <div class="flex items-center">
+              <div class="title">
+                <span>{title}</span>
+              </div>
+              <div class="flex items-center">
+                <svg
+                  class="w-5"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="far"
+                  data-icon="comment-alt"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  data-fa-i2svg=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 7.1 5.8 12 12 12 2.4 0 4.9-.7 7.1-2.4L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm16 352c0 8.8-7.2 16-16 16H288l-12.8 9.6L208 428v-60H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h384c8.8 0 16 7.2 16 16v288z"
+                  />
+                </svg>{" "}
+                {comments} Comentarios
+              </div>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </div>
+</div>
+<style>
+  .banner {
+    color: white;
+    padding: 20px;
+    background-image: url(/banner-1.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .item {
+    height: 25%;
+    background: #16222a; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #3a6073,
+      #16222a
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #3a6073,
+      #16222a
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+</style>
