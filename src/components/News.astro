@@ -1,3 +1,50 @@
-<div>
-  <h3 class="text-2xl">Ultimas Noticias</h3>
+---
+const news = [
+  {
+    image: "http://nolstagic.com/assets/images/news/news5.jpg",
+    title: "Apertura del reino de Oxidiana PARCHE 3.2.2",
+    content:
+      "La Madre de Linaje ha vuelto Tras muchos años acechando en su guarida,luchando contra valientes aventureros venidos desde lejos para desafiarla, Onyxia vuelve más fuerte que nunca para conmemorar el 5º aniversario de World of Warcraft.",
+  },
+  {
+    image: "http://nolstagic.com/assets/images/news/news4.jpg",
+    title: "Apertura del reino de Oxidiana PARCHE 3.2.2",
+    content:
+      "La Madre de Linaje ha vuelto Tras muchos años acechando en su guarida,luchando contra valientes aventureros venidos desde lejos para desafiarla, Onyxia vuelve más fuerte que nunca para conmemorar el 5º aniversario de World of Warcraft.",
+  },
+  {
+    image: "http://nolstagic.com/assets/images/news/news3.jpg",
+    title: "Apertura del reino de Oxidiana PARCHE 3.2.2",
+    content:
+      "La Madre de Linaje ha vuelto Tras muchos años acechando en su guarida,luchando contra valientes aventureros venidos desde lejos para desafiarla, Onyxia vuelve más fuerte que nunca para conmemorar el 5º aniversario de World of Warcraft.",
+  },
+  {
+    image: "http://nolstagic.com/assets/images/news/news2.jpg",
+    title: "Apertura del reino de Oxidiana PARCHE 3.2.2",
+    content:
+      "La Madre de Linaje ha vuelto Tras muchos años acechando en su guarida,luchando contra valientes aventureros venidos desde lejos para desafiarla, Onyxia vuelve más fuerte que nunca para conmemorar el 5º aniversario de World of Warcraft.",
+  },
+];
+---
+
+<div class="bg-[#151a25] mx-[150px] my-5 py-5">
+  <h2 class="text-3xl text-white py-2 text-center">Noticias</h2>
+  <div class="flex justify-center flex-wrap text-white">
+    {
+      news.map(({ image, title, content }) => (
+        <div class="flex border bg-[#1b2437] border-cyan-500">
+          <img class="w-[150px] h-[150px]" src={image} alt="" />
+          <div class="px-4">
+            <h3 class="text-2xl">{title}</h3>
+            <p>{content}</p>
+            <h3 class="text-end my-5">0 commentarios</h3>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </div>
+
+<script>
+  import "@justinribeiro/lite-youtube";
+</script>
