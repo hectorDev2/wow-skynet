@@ -1,0 +1,95 @@
+---
+import SelectLanguage from "./SelectLanguage.astro";
+import HeaderLink from "./HeaderLink.astro";
+import Logo from "../components/Logo.astro";
+import MenuIcon from "./icons/MenuIcon.astro";
+import CloseIcon from "./icons/CloseIcon.astro";
+import Button from "./Button.astro";
+
+const routes = [
+  {
+    path: "/",
+    title: "Home",
+  },
+  {
+    path: "/archivo",
+    title: "Archivo",
+  },
+];
+---
+
+<header id="header" class="fixed w-screen z-50 top-0 lg:px-0">
+  <div class="mx-auto flex max-w-7xl items-center justify-between">
+    <Logo class="w-20 text__glowing" />
+    <nav
+      class="col-span-1 text-white hidden md:flex w-full mx-auto text-sm gap-2 items-center justify-center"
+    >
+      {
+        routes.map(({ path, title }) => (
+          <>
+            <HeaderLink class="text__glowing" href={path}>
+              {title}
+            </HeaderLink>
+          </>
+        ))
+      }
+
+      <div class="flex flex-col">
+        <SelectLanguage />
+      </div>
+    </nav>
+    <!-- Botón de menú para pantallas pequeñas -->
+    <button
+      id="menu-toggle"
+      class="relative flex flex-grow basis-0 justify-end text-2xl md:hidden z-50"
+    >
+      <span id="menu-icon">
+        <span class=""><MenuIcon class="text-white" /></span>
+        <span class="hidden"><CloseIcon class="text-white" /></span>
+      </span>
+    </button>
+
+    <a
+      target="_blank"
+      href="/https://drive.google.com/file/d/1D7IvIqMyqAoG58fuk8bc0JvhAmrWBbOK/view"
+      class="border text-white text-center hidden text-[5px] md:text-xs rounded-full md:inline-block border-white px-2 py-2 justify-self-end hover:bg-white hover:text-black duration-300"
+    >
+      DESCARGAR
+    </a>
+
+    <!-- Menú de navegación móvil para pantallas pequeñas -->
+    <nav
+      id="mobile-menu"
+      class="bg-[#14213d]/90 -translate-y-full transition-transform md:hidden w-full flex flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center"
+    >
+      {
+        routes.map(({ path, title }) => (
+          <a class="hover:underline text-white" href={path}>
+            {title}
+          </a>
+        ))
+      }
+
+      <Button
+        class="my-4 whitespace-nowrap text-center lg:hidden lg:text-base text-white bg-black"
+        url="https://drive.google.com/file/d/1D7IvIqMyqAoG58fuk8bc0JvhAmrWBbOK/view"
+      >
+        Descarga
+      </Button>
+      <SelectLanguage />
+    </nav>
+  </div>
+</header>
+<script>
+  const menuToggle = document.querySelector("#menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+
+  menuToggle?.addEventListener("click", function () {
+    mobileMenu?.classList.toggle("translate-y-0");
+    document.body.classList.toggle("overflow-hidden");
+    menuIcon
+      ?.querySelectorAll("span")
+      .forEach((el) => el.classList.toggle("hidden"));
+  });
+</script>
