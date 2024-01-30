@@ -3,6 +3,7 @@ interface Props {
   checkActive?: boolean;
   href: string;
   class?: string;
+  target?: string;
 }
 
 const { currentLocale = "es" } = Astro;
@@ -10,6 +11,7 @@ const {
   href,
   class: className,
   checkActive = true,
+  target,
   ...restOfProps
 } = Astro.props;
 
