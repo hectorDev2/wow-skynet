@@ -5,9 +5,29 @@ import LoaderSignal from "./LoaderSignal.astro";
 
 <div class="my-14">
   <div class="flex flex-col items-center">
-    <Logo />
+    <img class="logo-animate" src="/logo-.png" alt="logo" />
+
     <h2 class="text-3xl text-white">status server:</h2>
     <LoaderSignal />
     <h3 class="text-white">online</h3>
   </div>
 </div>
+<style>
+  .logo-animate {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes floating {
+    0% {
+      transform: translate(0, 0px);
+    }
+    50% {
+      transform: translate(0, 10px);
+    }
+    100% {
+      transform: translate(0, -0px);
+    }
+  }
+</style>
