@@ -1,3 +1,7 @@
+---
+import { urlDownload } from "../config/index";
+---
+
 <div class="w-[100%]">
   <div
     class="flex flex-col md:flex-row justify-center flex-wrap bg-[#1f2534] md:mx-[150px] text-white"
@@ -20,9 +24,7 @@
       <h2 class="text-yellow-500 text-2xl py-2">DESCARGA</h2>
       <h2>EL JUEGO</h2>
       <p>¡unete junto a tus amigos a este mundo de criaturas y recompensas!</p>
-      <a
-        target="_blank"
-        href="https://www.dropbox.com/scl/fi/o15s47z8r7h9w2i3v6uxw/Wrath-of-the-Lich-King-3.3.5a-SKYNET-Firestorm.rar?rlkey=aaiwkgjrwagxkzz9hsi7ikcvp&dl=0"
+      <a target="_blank" href={urlDownload}
         ><button class="button-link mt-4 px-4 w-full">
           <div class="desc">
             <strong>DESCARGAR</strong>

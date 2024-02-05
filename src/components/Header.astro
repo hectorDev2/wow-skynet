@@ -5,6 +5,7 @@ import Logo from "./Logo.astro";
 import MenuIcon from "./icons/MenuIcon.astro";
 import CloseIcon from "./icons/CloseIcon.astro";
 import Button from "./Button.astro";
+import { urlDownload } from "../config/index";
 
 const routes = [
   {
@@ -29,13 +30,7 @@ const routes = [
           </>
         ))
       }
-      <a
-        target="_blank"
-        class="text__glowing"
-        href="https://www.dropbox.com/scl/fi/o15s47z8r7h9w2i3v6uxw/Wrath-of-the-Lich-King-3.3.5a-SKYNET-Firestorm.rar?rlkey=aaiwkgjrwagxkzz9hsi7ikcvp&dl=0"
-      >
-        Descarga
-      </a>
+      <a target="_blank" class="text__glowing" href={urlDownload}> Descarga</a>
 
       <div class="flex flex-col">
         <SelectLanguage />
@@ -90,7 +85,7 @@ const routes = [
 
       <Button
         class="my-4 whitespace-nowrap text-center lg:hidden lg:text-base text-white bg-black"
-        url="https://www.dropbox.com/scl/fi/o15s47z8r7h9w2i3v6uxw/Wrath-of-the-Lich-King-3.3.5a-SKYNET-Firestorm.rar?rlkey=aaiwkgjrwagxkzz9hsi7ikcvp&dl=0"
+        url={urlDownload}
       >
         Descarga
       </Button>
